@@ -1,10 +1,12 @@
-const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) =>
+const getVisibleExpenses = (expenses, {
+    text, sortBy, startDate, endDate
+}) =>
     expenses
-        .filter(expense => {
+        .filter((expense) => {
             const startDateMatch =
-                typeof startDate !== "number" || expense.createdAt >= startDate;
+                typeof startDate !== 'number' || expense.createdAt >= startDate;
             const endDateMatch =
-                typeof endDate !== "number" || expense.createdAt <= endDate;
+                typeof endDate !== 'number' || expense.createdAt <= endDate;
             const textMatch = expense.description
                 .toLowerCase()
                 .includes(text.toLowerCase());
@@ -14,9 +16,9 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) =>
         // eslint-disable-next-line array-callback-return
         .sort((a, b) => {
             // from highest to lowest value
-            if (sortBy === "date") {
+            if (sortBy === 'date') {
                 return a.createdAt < b.createdAt ? 1 : -1;
-            } else if (sortBy === "amount") {
+            } else if (sortBy === 'amount') {
                 return a.amount < b.amount ? 1 : -1;
             }
         });
