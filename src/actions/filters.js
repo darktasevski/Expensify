@@ -23,7 +23,7 @@ export const setStartDate = (startDate = null) => ({
 });
 
 // SET_END_DATE
-export const setEndDate = (endDate = Date.now()) => ({
+export const setEndDate = (endDate = null) => ({
     type: 'SET_END_DATE',
     endDate,
 });
