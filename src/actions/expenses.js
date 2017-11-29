@@ -12,7 +12,7 @@ export const addExpense = (
         id: uuid(),
         description,
         notes,
-        amount: formatPrice(amount),
+        amount,
         createdAt,
     },
 });

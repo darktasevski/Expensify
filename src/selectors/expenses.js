@@ -11,6 +11,7 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) =>
 
             return startDateMatch && endDateMatch && textMatch;
         })
+        // eslint-disable-next-line array-callback-return
         .sort((a, b) => {
             // from highest to lowest value
             if (sortBy === "date") {
