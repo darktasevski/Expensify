@@ -59,7 +59,7 @@ it('should generate set text filter action object without text value', () => {
     });
 });
 
-/* sort by date and amoun */
+/* sort by date and amount */
 
 it('should generate action object for sort by amount', () => {
     expect(sortByAmount()).toEqual({ type: 'SORT_BY_AMOUNT' });
