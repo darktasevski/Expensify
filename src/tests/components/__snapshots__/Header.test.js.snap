@@ -1,251 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Header correctly 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <h2>
-          Expensify
-</h2>,
-        <NavLink
-          activeClassName="is-active"
-          ariaCurrent="true"
-          exact={true}
-          to="/"
->
-          Dashboard
-</NavLink>,
-        <NavLink
-          activeClassName="is-active"
-          ariaCurrent="true"
-          to="/create"
->
-          Add Expense
-</NavLink>,
-        <NavLink
-          activeClassName="is-active"
-          ariaCurrent="true"
-          to="/edit"
->
-          Edit Expense
-</NavLink>,
-        <NavLink
-          activeClassName="is-active"
-          ariaCurrent="true"
-          to="/help"
->
-          Need Help?
-</NavLink>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Expensify",
-        },
-        "ref": null,
-        "rendered": "Expensify",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "is-active",
-          "ariaCurrent": "true",
-          "children": "Dashboard",
-          "exact": true,
-          "to": "/",
-        },
-        "ref": null,
-        "rendered": "Dashboard",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "is-active",
-          "ariaCurrent": "true",
-          "children": "Add Expense",
-          "to": "/create",
-        },
-        "ref": null,
-        "rendered": "Add Expense",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "is-active",
-          "ariaCurrent": "true",
-          "children": "Edit Expense",
-          "to": "/edit",
-        },
-        "ref": null,
-        "rendered": "Edit Expense",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "is-active",
-          "ariaCurrent": "true",
-          "children": "Need Help?",
-          "to": "/help",
-        },
-        "ref": null,
-        "rendered": "Need Help?",
-        "type": [Function],
-      },
-    ],
-    "type": "header",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h2>
-            Expensify
-</h2>,
-          <NavLink
-            activeClassName="is-active"
-            ariaCurrent="true"
-            exact={true}
-            to="/"
->
-            Dashboard
-</NavLink>,
-          <NavLink
-            activeClassName="is-active"
-            ariaCurrent="true"
-            to="/create"
->
-            Add Expense
-</NavLink>,
-          <NavLink
-            activeClassName="is-active"
-            ariaCurrent="true"
-            to="/edit"
->
-            Edit Expense
-</NavLink>,
-          <NavLink
-            activeClassName="is-active"
-            ariaCurrent="true"
-            to="/help"
->
-            Need Help?
-</NavLink>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Expensify",
-          },
-          "ref": null,
-          "rendered": "Expensify",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "is-active",
-            "ariaCurrent": "true",
-            "children": "Dashboard",
-            "exact": true,
-            "to": "/",
-          },
-          "ref": null,
-          "rendered": "Dashboard",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "is-active",
-            "ariaCurrent": "true",
-            "children": "Add Expense",
-            "to": "/create",
-          },
-          "ref": null,
-          "rendered": "Add Expense",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "is-active",
-            "ariaCurrent": "true",
-            "children": "Edit Expense",
-            "to": "/edit",
-          },
-          "ref": null,
-          "rendered": "Edit Expense",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "is-active",
-            "ariaCurrent": "true",
-            "children": "Need Help?",
-            "to": "/help",
-          },
-          "ref": null,
-          "rendered": "Need Help?",
-          "type": [Function],
-        },
-      ],
-      "type": "header",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
+<header>
+  <h2>
+    Expensify
+  </h2>
+  <NavLink
+    activeClassName="is-active"
+    ariaCurrent="true"
+    exact={true}
+    to="/"
+  >
+    Dashboard
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    ariaCurrent="true"
+    to="/create"
+  >
+    Add Expense
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    ariaCurrent="true"
+    to="/edit"
+  >
+    Edit Expense
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    ariaCurrent="true"
+    to="/help"
+  >
+    Need Help?
+  </NavLink>
+</header>
 `;

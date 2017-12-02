@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'normalize.css/normalize.css';
+import 'react-dates/lib/css/_datepicker.css';
 import './App.css';
 import ExpenseList from './components/ExpenseList';
 import ExpenseListFilters from './components/ExpenseListFilters';

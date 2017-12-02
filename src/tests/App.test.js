@@ -1,13 +1,8 @@
 import React from 'react';
 import App from '../App';
+/* eslint-disable no-undef */
 
 it('renders without crashing', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper).toMatchSnapshot();
-});
-
-const add = (a, b) => a + b;
-
-it('should add two numbers', () => {
-    expect(add(1, 2)).toBe(3);
+    expect(toJson(wrapper)).toMatchSnapshot();
 });

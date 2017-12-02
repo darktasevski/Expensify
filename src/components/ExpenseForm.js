@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import 'react-dates/initialize'; // NOTE: React-dates not working without initializing them first
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 // import { formatPrice } from '../helpers';
 
 const now = moment();
