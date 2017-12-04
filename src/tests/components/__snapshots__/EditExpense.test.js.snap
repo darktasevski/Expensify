@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders EditExpensePage without crashing 1`] = `
+<div>
+  <ExpenseForm
+    expense={
+      Object {
+        "amount": 190,
+        "createdAt": 0,
+        "description": "Gym",
+        "id": "1",
+        "notes": "",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove Expense
+  </button>
+</div>
+`;
+
+exports[`should handle editExpense 1`] = `
+<div>
+  <ExpenseForm
+    expense={
+      Object {
+        "amount": 190,
+        "createdAt": 0,
+        "description": "Gym",
+        "id": "1",
+        "notes": "",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove Expense
+  </button>
+</div>
+`;
+
+exports[`should handle removeExpense 1`] = `
+<div>
+  <ExpenseForm
+    expense={
+      Object {
+        "amount": 190,
+        "createdAt": 0,
+        "description": "Gym",
+        "id": "1",
+        "notes": "",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove Expense
+  </button>
+</div>
+`;

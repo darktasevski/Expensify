@@ -10,12 +10,6 @@ const Header = props => (
         <NavLink to="/create" activeClassName="is-active">
             Add Expense
         </NavLink>
-        <NavLink to="/edit" activeClassName="is-active">
-            Edit Expense
-        </NavLink>
-        <NavLink to="/help" activeClassName="is-active">
-            Need Help?
-        </NavLink>
     </header>
 );
 

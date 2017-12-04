@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import 'react-dates/initialize'; // NOTE: React-dates not working without initializing them first
 import { SingleDatePicker } from 'react-dates';
-// import { formatPrice } from '../helpers';
+// import { formatPr ice } from '../helpers';
 
 const now = moment();
-console.log(now.format('MMM Do, Y'));
+// console.log(now.format('MMM Do, Y'));
 
 export default class ExpenseForm extends Component {
     constructor(props) {
