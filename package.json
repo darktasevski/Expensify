@@ -3,9 +3,6 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "enzyme": "^3.2.0",
-        "enzyme-adapter-react-16": "^1.1.0",
-        "enzyme-to-json": "^3.2.2",
         "moment": "^2.19.2",
         "normalize.css": "^7.0.0",
         "prop-types": "^15.6.0",
@@ -27,6 +24,9 @@
         "eject": "react-scripts eject"
     },
     "devDependencies": {
+        "enzyme": "^3.2.0",
+        "enzyme-adapter-react-16": "^1.1.0",
+        "enzyme-to-json": "^3.2.2",
         "eslint": "^4.11.0",
         "eslint-config-airbnb": "^16.1.0",
         "eslint-config-prettier": "^2.9.0",

@@ -4,7 +4,7 @@ import 'react-dates/initialize'; // NOTE: React-dates not working without initia
 import { SingleDatePicker } from 'react-dates';
 // import { formatPr ice } from '../helpers';
 
-const now = moment();
+// const now = moment();
 // console.log(now.format('MMM Do, Y'));
 
 export default class ExpenseForm extends Component {

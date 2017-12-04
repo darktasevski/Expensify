@@ -2,6 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div>
+  <Connect(Component) />
   <Connect(ExpenseListFilters) />
   <Connect(Component) />
 </div>
