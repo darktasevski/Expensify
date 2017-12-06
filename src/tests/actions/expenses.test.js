@@ -4,6 +4,7 @@ import {
   addExpense,
   startAddExpense,
   editExpense,
+  startEditExpense,
   removeExpense,
   startRemoveExpense,
   setExpenses,
@@ -71,6 +72,35 @@ it('should setup editing expense action object', () => {
       amount: 'Pi',
     },
   });
+});
+
+it('should edit expense from database', (done) => {
+  const store = createMockStore({});
+  const [id] = expenses[0].id;
+  const updates = {
+    amount: 320.44,
+  };
+  store
+    .dispatch(startEditExpense(id, updates))
+    .then(() => {
+      const actions = store.getActions();
+      expect(actions[0]).toEqual({
+        type: 'EDIT_EXPENSE',
+        id,
+        updates,
+      });
+    })
+    .then(() => database
+      .ref(`expenses/${id}`)
+      .once('value')
+      .then((snapshot) => {
+        const value = snapshot.val();
+        expect(value.amount).toBe(320.44);
+      }))
+    .then(() => done())
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 /* Add expense test case */

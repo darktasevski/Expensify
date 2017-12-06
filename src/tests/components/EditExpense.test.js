@@ -4,17 +4,17 @@ import expenses from '../fixtures/expenses';
 
 /* eslint-disable no-undef */
 
-let editExpense;
+let startEditExpense;
 let startRemoveExpense;
 let history;
 let wrapper;
 
 beforeEach(() => {
-  editExpense = jest.fn();
+  startEditExpense = jest.fn();
   startRemoveExpense = jest.fn();
   history = { push: jest.fn() };
   wrapper = shallow(<EditExpensePage
-    editExpense={editExpense}
+    startEditExpense={startEditExpense}
     startRemoveExpense={startRemoveExpense}
     history={history}
     expense={expenses[0]}
@@ -25,10 +25,13 @@ it('renders EditExpensePage without crashing', () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
-it('should handle editExpense', () => {
+it('should handle startEditExpense', () => {
   wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0]);
   expect(history.push).toHaveBeenLastCalledWith('/');
-  expect(editExpense).toHaveBeenLastCalledWith(expenses[0].id, expenses[0]);
+  expect(startEditExpense).toHaveBeenLastCalledWith(
+    expenses[0].id,
+    expenses[0],
+  );
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
