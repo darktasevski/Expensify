@@ -8,109 +8,105 @@ import { SingleDatePicker } from 'react-dates';
 // console.log(now.format('MMM Do, Y'));
 
 export default class ExpenseForm extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            description: props.expense ? props.expense.description : '',
-            amount: props.expense
-                ? (props.expense.amount / 100).toString()
-                : '',
-            notes: props.expense ? props.expense.notes : '',
-            createdAt: props.expense
-                ? moment(props.expense.createdAt)
-                : moment(),
-            dateFocused: false,
-            error: '',
-        };
+    this.state = {
+      description: props.expense ? props.expense.description : '',
+      amount: props.expense ? (props.expense.amount / 100).toString() : '',
+      notes: props.expense ? props.expense.notes : '',
+      createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
+      dateFocused: false,
+      error: '',
+    };
+  }
+
+  onDescriptionChange = (e) => {
+    const description = e.target.value;
+    this.setState(() => ({ description }));
+  };
+  onNotesChange = (e) => {
+    const notes = e.target.value;
+    this.setState(() => ({ notes }));
+  };
+
+  onAmountChange = (e) => {
+    const amount = e.target.value;
+    // Regex to format price to max 2 decimal points *
+    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+      this.setState(() => ({ amount }));
     }
+  };
 
-    onDescriptionChange = (e) => {
-        const description = e.target.value;
-        this.setState(() => ({ description }));
-    };
-    onNotesChange = (e) => {
-        const notes = e.target.value;
-        this.setState(() => ({ notes }));
-    };
-
-    onAmountChange = (e) => {
-        const amount = e.target.value;
-        // Regex to format price to max 2 decimal points *
-        if (amount.match(/^\d*(\.\d{0,2})?$/)) {
-            this.setState(() => ({ amount }));
-        }
-    };
-
-    onDateChange = (createdAt) => {
-        if (createdAt) {
-            this.setState(() => ({ createdAt }));
-        }
-    };
-
-    onFocusChange = ({ focused }) => {
-        this.setState(() => ({ dateFocused: focused }));
-    };
-
-    onSubmit = (e) => {
-        e.preventDefault();
-        if (!this.state.description || !this.state.amount) {
-            // Set error state
-            const error = 'Please provide description and amount.';
-            this.setState((state, props) => ({ error }));
-        } else {
-            // Clear the error
-            this.setState(() => ({ error: '' }));
-
-            this.props.onSubmit({
-                description: this.state.description,
-                amount: parseFloat(this.state.amount, 10) * 100,
-                notes: this.state.notes,
-                createdAt: this.state.createdAt.valueOf(),
-            });
-        }
-    };
-
-    render() {
-        return (
-            <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Description"
-                        value={this.state.description}
-                        onChange={this.onDescriptionChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="Amount"
-                        value={this.state.amount}
-                        onChange={this.onAmountChange}
-                        required
-                    />
-                    <SingleDatePicker
-                        date={this.state.createdAt} // momentPropTypes.momentObj or null
-                        onDateChange={this.onDateChange} // PropTypes.func.isRequired
-                        focused={this.state.dateFocused} // PropTypes.bool
-                        onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
-                        numberOfMonths={1}
-                        isOutsideRange={() => false}
-                    />
-                    <textarea
-                        name="notes"
-                        cols="30"
-                        rows="10"
-                        value={this.state.notes}
-                        onChange={this.onNotesChange}
-                        placeholder="Expense Notes"
-                    />
-                    <button type="submit">Add Expense</button>
-                </form>
-            </div>
-        );
+  onDateChange = (createdAt) => {
+    if (createdAt) {
+      this.setState(() => ({ createdAt }));
     }
+  };
+
+  onFocusChange = ({ focused }) => {
+    this.setState(() => ({ dateFocused: focused }));
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    if (!this.state.description || !this.state.amount) {
+      // Set error state
+      const error = 'Please provide description and amount.';
+      this.setState((state, props) => ({ error }));
+    } else {
+      // Clear the error
+      this.setState(() => ({ error: '' }));
+
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        notes: this.state.notes,
+        createdAt: this.state.createdAt.valueOf(),
+      });
+    }
+  };
+
+  render() {
+    return (
+      <div>
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmit}>
+          <input
+            type="text"
+            placeholder="Description"
+            value={this.state.description}
+            onChange={this.onDescriptionChange}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Amount"
+            value={this.state.amount}
+            onChange={this.onAmountChange}
+            required
+          />
+          <SingleDatePicker
+            date={this.state.createdAt} // momentPropTypes.momentObj or null
+            onDateChange={this.onDateChange} // PropTypes.func.isRequired
+            focused={this.state.dateFocused} // PropTypes.bool
+            onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+          />
+          <textarea
+            name="notes"
+            cols="30"
+            rows="10"
+            value={this.state.notes}
+            onChange={this.onNotesChange}
+            placeholder="Expense Notes"
+          />
+          <button type="submit">Add Expense</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 /**

@@ -8,15 +8,15 @@ import ExpenseListFilters from './components/ExpenseListFilters';
 import ExpensesSummary from './components/ExpensesSummary';
 
 class App extends Component {
-    render() {
-        return (
-            <div>
-                <ExpensesSummary />
-                <ExpenseListFilters />
-                <ExpenseList />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <ExpensesSummary />
+        <ExpenseListFilters />
+        <ExpenseList />
+      </div>
+    );
+  }
 }
 
 export default App;

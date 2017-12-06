@@ -65,3 +65,25 @@ exports[`should handle removeExpense 1`] = `
   </button>
 </div>
 `;
+
+exports[`should handle startRemoveExpense 1`] = `
+<div>
+  <ExpenseForm
+    expense={
+      Object {
+        "amount": 190,
+        "createdAt": 0,
+        "description": "Gym",
+        "id": "1",
+        "notes": "",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove Expense
+  </button>
+</div>
+`;
