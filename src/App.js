@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React, { Component } from 'react';
 import 'normalize.css/normalize.css';
 import 'react-dates/lib/css/_datepicker.css';
