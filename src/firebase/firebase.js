@@ -1,18 +1,18 @@
 import * as firebase from 'firebase';
-import expenses from '../tests/fixtures/expenses';
-
 // Initialize Firebase
 const config = {
-    apiKey: 'AIzaSyBUqcdPodp_2950C2-Y0GZ4A7RNSjVsWJA',
-    authDomain: 'expensify-react-81c0f.firebaseapp.com',
-    databaseURL: 'https://expensify-react-81c0f.firebaseio.com',
-    projectId: 'expensify-react-81c0f',
-    storageBucket: 'expensify-react-81c0f.appspot.com',
-    messagingSenderId: '44196604238',
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
 };
 
 firebase.initializeApp(config);
 const database = firebase.database();
+
+export { firebase, database as default };
 
 // firebase
 //     .database()
@@ -40,17 +40,17 @@ const database = firebase.database();
 //     .ref('expenses')
 //     .push(expenses[0]);
 
-database
-    .ref('expenses')
-    .once('value')
-    .then((snapshot) => {
-        const expensesArr = [];
-        snapshot.forEach((childSnapshot) => {
-            console.log(childSnapshot.key);
-            expensesArr.push({
-                ...childSnapshot.val(),
-                id: childSnapshot.key,
-            });
-            console.log(expensesArr);
-        });
-    });
+// database
+//     .ref('expenses')
+//     .once('value')
+//     .then((snapshot) => {
+//         const expensesArr = [];
+//         snapshot.forEach((childSnapshot) => {
+//             console.log(childSnapshot.key);
+//             expensesArr.push({
+//                 ...childSnapshot.val(),
+//                 id: childSnapshot.key,
+//             });
+//             console.log(expensesArr);
+//         });
+//     });

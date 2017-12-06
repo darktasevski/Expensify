@@ -1,20 +1,41 @@
-import uuid from 'uuid';
+import database from '../firebase/firebase';
 
-// Expenses Actions
+// * Actions workflow
+// ? component calls action generator
+// ? action generator returns function
+// ? component dispatches function (redux middleware)(redux-thunk?)
+// ? redux store changes
 
 // ADD_EXPENSE
-export const addExpense = ({
-    description = '', notes = '', amount = 0, createdAt = 0
-} = {}, ) => ({
+export const addExpense = expense => ({
     type: 'ADD_EXPENSE',
-    expense: {
-        id: uuid(),
+    expense,
+});
+
+export const startAddExpense = (expenseData = {}) => (dispatch) => {
+    // set defaults and destructure from expenseData
+    const {
+        description = '',
+        notes = '',
+        amount = 0,
+        createdAt = 0,
+    } = expenseData;
+    const expense = {
         description,
         notes,
         amount,
         createdAt,
-    },
-});
+    };
+    return database
+        .ref('expenses')
+        .push(expense)
+        .then((ref) => {
+            dispatch(addExpense({
+                id: ref.key,
+                ...expense,
+            }), );
+        });
+};
 // REMOVE_EXPENSE
 export const removeExpense = ({ id } = {}) => ({
     type: 'REMOVE_EXPENSE',
