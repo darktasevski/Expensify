@@ -4,19 +4,19 @@ import ExpenseListItem from './ExpenseListItem';
 import getVisibleExpenses from '../selectors/expenses';
 
 export const ExpenseList = props => (
-    <div>
-        {props.expenses.length === 0 ? (
-            <p>You have no Expenses</p>
-        ) : (
-            props.expenses.map(expense => (
-                <ExpenseListItem key={expense.id} {...expense} />
-            ))
-        )}
-    </div>
+  <div>
+    {props.expenses.length === 0 ? (
+      <p>You have no Expenses</p>
+    ) : (
+      props.expenses.map(expense => (
+        <ExpenseListItem key={expense.id} {...expense} />
+      ))
+    )}
+  </div>
 );
 
 const mapStateToProps = state => ({
-    expenses: getVisibleExpenses(state.expenses, state.filters),
+  expenses: getVisibleExpenses(state.expenses, state.filters),
 });
 
 export default connect(mapStateToProps)(ExpenseList);
