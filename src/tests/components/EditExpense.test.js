@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditExpensePage } from '../../components/EditExpense';
+import { EditExpensePage } from '../../components/EditExpensePage';
 import expenses from '../fixtures/expenses';
 
 /* eslint-disable no-undef */
