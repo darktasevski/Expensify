@@ -1,0 +1,19 @@
+html {
+  // Reset default font size of 16 px to 10 px so that we can scale it with rem units
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: $dark-grey;
+  font-size: $medium-size;
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
