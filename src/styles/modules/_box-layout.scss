@@ -11,9 +11,8 @@
     background: fade-out($color: white, $amount: 0.15);
     border-radius: 3px;
     text-align: center;
-    width: 35rem;
-    padding: $large-size $medium-size;
-    // height: 17rem;
+    width: 40rem;
+    padding: $largest-size $medium-size;
   }
 
   &__title {

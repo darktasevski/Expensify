@@ -1,19 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 
 /* eslint-disable no-shadow */
 export const Header = ({ startLogout }) => (
-  <header>
-    <h2>Expensify</h2>
-    <NavLink to="/dashboard" exact activeClassName="is-active">
-      Dashboard
-    </NavLink>
-    <NavLink to="/create" activeClassName="is-active">
-      Add Expense
-    </NavLink>
-    <button onClick={startLogout}>Logout</button>
+  <header className="header">
+    <Link className="header__title" to="/dashboard" exact>
+      <h2>Expensify</h2>
+    </Link>
+    <button className="button" onClick={startLogout}>
+      Logout
+    </button>
   </header>
 );
 

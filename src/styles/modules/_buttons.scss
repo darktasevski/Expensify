@@ -1,0 +1,15 @@
+.button {
+  background: $button-blue;
+  border: none;
+  color: $main-text-light;
+  outline: none;
+  font-weight: 300;
+  font-size: $fs-large;
+  padding: $small-size;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.header .button {
+  background: none;
+}

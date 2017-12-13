@@ -1,0 +1,13 @@
+.page-header {
+  padding: $large-size $medium-size;
+  font-size: $large-size;
+  background: $off-white;
+
+  &__title {
+    font-weight: 300;
+    margin: 0;
+    & span {
+      font-weight: bold;
+    }
+  }
+}

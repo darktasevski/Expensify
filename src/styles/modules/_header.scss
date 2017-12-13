@@ -1,0 +1,16 @@
+.header {
+  align-items: center;
+  background: $dark-blue;
+  display: flex;
+  justify-content: space-between;
+  padding: $largest-size $large-size;
+
+  &__title {
+    color: $main-text-light;
+    text-decoration: none;
+    & h2 {
+      margin: 0;
+      font-size: $fs-largest;
+    }
+  }
+}
