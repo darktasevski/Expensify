@@ -5,14 +5,13 @@ import { formatPrice, formatDate } from '../helpers'; // or just use Numeral.js 
 const ExpenseListItem = ({
   description, amount, createdAt, id, dispatch
 }) => (
-  <div>
-    <Link to={`/edit/${id}`}>
+  <Link className="list-item" to={`/edit/${id}`}>
+    <div>
       <h4>{description}</h4>
-    </Link>
-    <p>
-      {formatPrice(amount)} -- {formatDate(createdAt)}
-    </p>
-  </div>
+      <span>{formatDate(createdAt)}</span>
+    </div>
+    <h3>{formatPrice(amount)}</h3>
+  </Link>
 );
 
 export default ExpenseListItem;
