@@ -3,3 +3,8 @@
   padding: 0 $medium-size;
   margin: 0 auto;
 }
+.content-container--center {
+  @extend .content-container;
+  margin: 0 auto;
+  text-align: center;
+}

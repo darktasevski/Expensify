@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 html {
   font-size: 62.5%; }
 
@@ -45,6 +48,23 @@ button:disabled {
 .header .button {
   background: none; }
 
+.button--add {
+  width: 50%;
+  margin: 0 auto; }
+
+.button--save {
+  width: 50%;
+  background: #66bb6a;
+  margin: 0 auto; }
+
+.button--remove {
+  background: #e57373;
+  font-size: 1.2rem;
+  width: 20%;
+  margin-left: 3.2rem;
+  position: relative;
+  top: -5rem; }
+
 .header {
   align-items: center;
   background: #333745;
@@ -58,15 +78,20 @@ button:disabled {
       margin: 0;
       font-size: 3.6rem; }
 
-.content-container {
+.content-container, .content-container--center {
   max-width: 90rem;
   padding: 0 1.6rem;
   margin: 0 auto; }
 
+.content-container--center {
+  margin: 0 auto;
+  text-align: center; }
+
 .page-header {
   padding: 3.2rem 1.6rem;
   font-size: 3.2rem;
-  background: #eeeeee; }
+  background: #eeeeee;
+  margin-bottom: 1.6rem; }
   .page-header__title {
     font-weight: 300;
     margin: 0; }
@@ -74,7 +99,27 @@ button:disabled {
       font-weight: bold; }
 
 .input-group {
-  padding: 1.6rem;
+  padding: 0 1.6rem;
   display: flex;
   justify-content: space-around;
   align-items: center; }
+
+.text-input, .select, .textarea {
+  border: 1px solid #cacccd;
+  height: 48px;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 300; }
+
+.textarea {
+  height: 10rem; }
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 4.8rem; }
+  .form > * {
+    margin-bottom: 1.6rem; }
+  .form__error {
+    margin: 0 0 1.6rem 0;
+    font-style: italic; }

@@ -68,43 +68,51 @@ export default class ExpenseForm extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            placeholder="Description"
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Amount"
-            value={this.state.amount}
-            onChange={this.onAmountChange}
-            required
-          />
-          <SingleDatePicker
-            date={this.state.createdAt} // momentPropTypes.momentObj or null
-            onDateChange={this.onDateChange} // PropTypes.func.isRequired
-            focused={this.state.dateFocused} // PropTypes.bool
-            onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-          />
-          <textarea
-            name="notes"
-            cols="30"
-            rows="10"
-            value={this.state.notes}
-            onChange={this.onNotesChange}
-            placeholder="Expense Notes"
-          />
-          <button type="submit">Add Expense</button>
-        </form>
-      </div>
+      <form onSubmit={this.onSubmit} className="form content-container">
+        {this.state.error && <p className="form__error">{this.state.error}</p>}
+        <input
+          className="text-input"
+          type="text"
+          placeholder="Description"
+          value={this.state.description}
+          onChange={this.onDescriptionChange}
+          required
+        />
+        <input
+          className="text-input"
+          type="text"
+          placeholder="Amount"
+          value={this.state.amount}
+          onChange={this.onAmountChange}
+          required
+        />
+        <SingleDatePicker
+          date={this.state.createdAt} // momentPropTypes.momentObj or null
+          onDateChange={this.onDateChange} // PropTypes.func.isRequired
+          focused={this.state.dateFocused} // PropTypes.bool
+          onFocusChange={this.onFocusChange} // PropTypes.func.isRequired
+          numberOfMonths={1}
+          isOutsideRange={() => false}
+        />
+        <textarea
+          name="notes"
+          className="textarea"
+          value={this.state.notes}
+          onChange={this.onNotesChange}
+          placeholder="Expense Notes"
+        />
+        {this.props.path === '/edit/:id' ? (
+          <button className="button button--save" type="submit">
+            Save Expense
+          </button>
+        ) : (
+          <button className="button button--add" type="submit">
+            Add Expense
+          </button>
+        )}
+      </form>
     );
   }
 }

@@ -13,3 +13,23 @@
 .header .button {
   background: none;
 }
+
+.button--add {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.button--save {
+  width: 50%;
+  background: #66bb6a;
+  margin: 0 auto;
+}
+
+.button--remove {
+  background: #e57373;
+  font-size: $fs-small;
+  width: 20%;
+  margin-left: $large-size;
+  position: relative;
+  top: -5rem;
+}
