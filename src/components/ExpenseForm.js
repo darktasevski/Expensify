@@ -6,9 +6,6 @@ import createHistory from 'history/createBrowserHistory';
 
 // import { formatPr ice } from '../helpers';
 
-const history = createHistory();
-const { location } = history;
-const urlPath = !!location.pathname.includes('/edit/');
 // const now = moment();
 // console.log(now.format('MMM Do, Y'));
 
@@ -72,6 +69,12 @@ export default class ExpenseForm extends Component {
     }
   };
 
+  checkUrlPath = () => {
+    const history = createHistory();
+    const { location } = history;
+    return !!location.pathname.includes('/edit/');
+  };
+
   render() {
     return (
       <form onSubmit={this.onSubmit} className="form content-container">
@@ -107,7 +110,7 @@ export default class ExpenseForm extends Component {
           onChange={this.onNotesChange}
           placeholder="Expense Notes"
         />
-        {urlPath ? (
+        {this.checkUrlPath() ? (
           <button className="button button--save" type="submit">
             Save Expense
           </button>
