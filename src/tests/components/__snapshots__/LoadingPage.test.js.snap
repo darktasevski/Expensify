@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LoadingPage without crashing 1`] = `
+<div
+  className="loader"
+>
+  <img
+    alt="App loading"
+    className="loader__image"
+    src="/images/loader.gif"
+  />
+</div>
+`;

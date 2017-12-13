@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import 'react-dates/initialize'; // NOTE: React-dates not working without initializing them first
 import { SingleDatePicker } from 'react-dates';
+import createHistory from 'history/createBrowserHistory';
+
 // import { formatPr ice } from '../helpers';
 
+const history = createHistory();
+const { location } = history;
+const urlPath = !!location.pathname.includes('/edit/');
 // const now = moment();
 // console.log(now.format('MMM Do, Y'));
 
@@ -68,7 +73,6 @@ export default class ExpenseForm extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <form onSubmit={this.onSubmit} className="form content-container">
         {this.state.error && <p className="form__error">{this.state.error}</p>}
@@ -103,7 +107,7 @@ export default class ExpenseForm extends Component {
           onChange={this.onNotesChange}
           placeholder="Expense Notes"
         />
-        {this.props.path === '/edit/:id' ? (
+        {urlPath ? (
           <button className="button button--save" type="submit">
             Save Expense
           </button>

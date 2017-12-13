@@ -9,7 +9,6 @@ export class EditExpensePage extends React.Component {
     this.props.startEditExpense(this.props.expense.id, expense);
     // Redirect to home page
     this.props.history.push('/');
-    console.info('updated', expense);
   };
 
   onRemove = () => {
@@ -25,11 +24,7 @@ export class EditExpensePage extends React.Component {
             <h3 className="page-header__title">Edit Page</h3>
           </div>
         </div>
-        <ExpenseForm
-          expense={this.props.expense}
-          onSubmit={this.onSubmit}
-          path={this.props.match.path}
-        />
+        <ExpenseForm expense={this.props.expense} onSubmit={this.onSubmit} />
         <div className="content-container--center">
           <button className="button button--remove" onClick={this.onRemove}>
             Remove Expense

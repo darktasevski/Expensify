@@ -2,6 +2,19 @@
 
 exports[`renders EditExpensePage without crashing 1`] = `
 <div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h3
+        className="page-header__title"
+      >
+        Edit Page
+      </h3>
+    </div>
+  </div>
   <ExpenseForm
     expense={
       Object {
@@ -14,16 +27,34 @@ exports[`renders EditExpensePage without crashing 1`] = `
     }
     onSubmit={[Function]}
   />
-  <button
-    onClick={[Function]}
+  <div
+    className="content-container--center"
   >
-    Remove Expense
-  </button>
+    <button
+      className="button button--remove"
+      onClick={[Function]}
+    >
+      Remove Expense
+    </button>
+  </div>
 </div>
 `;
 
 exports[`should handle startEditExpense 1`] = `
 <div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h3
+        className="page-header__title"
+      >
+        Edit Page
+      </h3>
+    </div>
+  </div>
   <ExpenseForm
     expense={
       Object {
@@ -36,16 +67,34 @@ exports[`should handle startEditExpense 1`] = `
     }
     onSubmit={[Function]}
   />
-  <button
-    onClick={[Function]}
+  <div
+    className="content-container--center"
   >
-    Remove Expense
-  </button>
+    <button
+      className="button button--remove"
+      onClick={[Function]}
+    >
+      Remove Expense
+    </button>
+  </div>
 </div>
 `;
 
 exports[`should handle startRemoveExpense 1`] = `
 <div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h3
+        className="page-header__title"
+      >
+        Edit Page
+      </h3>
+    </div>
+  </div>
   <ExpenseForm
     expense={
       Object {
@@ -58,10 +107,15 @@ exports[`should handle startRemoveExpense 1`] = `
     }
     onSubmit={[Function]}
   />
-  <button
-    onClick={[Function]}
+  <div
+    className="content-container--center"
   >
-    Remove Expense
-  </button>
+    <button
+      className="button button--remove"
+      onClick={[Function]}
+    >
+      Remove Expense
+    </button>
+  </div>
 </div>
 `;
